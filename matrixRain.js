@@ -21,10 +21,12 @@ function draw() {
   updateCharacterStreams();
 }
 
+// returns a random number between the two parameters
 function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// creates the stream objects.
 function createCharacterStreams() {
   for(var i = 0; i < maxStreams; i ++ ){
     var randomStreamLength = randomNumber(minCharactersInStream, maxCharactersInStream);
@@ -55,7 +57,10 @@ function Stream(x, y, numberOfCharacters, textsize, speed) {
         var randomInt = randomNumber(minChineseCharacter, maxChineseCharacter);
         var character =  String.fromCharCode(randomInt);
         textSize(textsize);
-        fill(0, 255, 0);
+        if(i == 0) fill(0, 0, 0);
+        else {
+          fill(0, 255, 0);
+        }
         text(character, x, y - i * textsize);
     }
   }
