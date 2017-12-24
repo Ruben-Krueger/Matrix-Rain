@@ -12,7 +12,7 @@ var minSpeed = 4;
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   createCharacterStreams();
-  frameRate(30);
+  frameRate(20);
 }
 
 function draw() {
