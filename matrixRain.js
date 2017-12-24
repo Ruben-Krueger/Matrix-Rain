@@ -52,6 +52,7 @@ function Stream(x, y, numberOfCharacters, textsize, speed) {
   this.x = x;
   this.y = y;
   
+  // draws random characters 
   this.draw = function() {
     for(var i = 0; i < numberOfCharacters; i ++) {
         var randomInt = randomNumber(minChineseCharacter, maxChineseCharacter);
@@ -65,6 +66,7 @@ function Stream(x, y, numberOfCharacters, textsize, speed) {
     }
   }
   
+  // moves the stream down the screen. if the top of the screen is below the bottom of the screen, the stream wraps to the top of the screen.
   this.update = function() {
     if(y - numberOfCharacters * textsize > window.innerHeight) {
       y = 0;
