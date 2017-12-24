@@ -8,11 +8,11 @@ var maxChineseCharacter = 12019;
 var maxStreams = 50;
 var maxSpeed = 20;
 var minSpeed = 4;
-var frameModulo = 50;
 
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   createCharacterStreams();
+  frameRate(30);
 }
 
 function draw() {
@@ -39,7 +39,7 @@ function createCharacterStreams() {
 
 function updateCharacterStreams() {
     for(var i = 0; i < streams.length; i ++ ){
-     if(frameCount % frameModulo === 0) streams[i].draw();
+     streams[i].draw();
      streams[i].update();
   }
 }
